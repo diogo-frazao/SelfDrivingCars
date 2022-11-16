@@ -43,3 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Cars
+    uniqueID: 830689421
+    locked: 0
+  - name: UI
+    uniqueID: 4008851319
+    locked: 0
