@@ -5,7 +5,17 @@ using UnityEngine;
 public class NodesPath : MonoBehaviour
 {
     public static NodesPath Instance { get; private set; }
-    [field:SerializeField] public float Radius { get; private set; } = 0.5f;
+
+    [SerializeField] 
+    private float m_defaultRadius =.5f;
+
+    float m_ActualRadius=0.5f;
+
+    public float RadiusRun
+    {
+        get => m_ActualRadius;
+        set => m_ActualRadius = value;
+    }
 
     public GameObject[] Nodes { get; private set; }
 
@@ -19,6 +29,8 @@ public class NodesPath : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        m_ActualRadius= m_defaultRadius;
     }
 
     private void OnDrawGizmos()
@@ -62,5 +74,10 @@ public class NodesPath : MonoBehaviour
             return 0;
         }
         return index + 1;
+    }
+
+    public void SetDefaultRadius()
+    {
+        m_ActualRadius = m_defaultRadius;
     }
 }

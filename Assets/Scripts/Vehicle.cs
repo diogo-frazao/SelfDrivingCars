@@ -16,6 +16,17 @@ public class Vehicle : MonoBehaviour
     private bool m_IsDoingHardTurn = false;
     private Vector2 m_HardTurnVector = Vector2.zero;
 
+    public float MaxSpeed
+    {
+        get { return m_MaxSpeed; }
+        set { m_MaxSpeed = value; }
+    }
+
+    public float MaxSteeringForce
+    {
+        get { return m_MaxSteeringForce; }
+        set { m_MaxSteeringForce = value;}
+    }
     private void DisableHardTurn() => m_IsDoingHardTurn = false;
 
     private void Awake()
@@ -64,7 +75,7 @@ public class Vehicle : MonoBehaviour
         Vector2 closestPointInPath = ScalarProjection(predictedLocation, pathStart, pathEnd);
         Debug.DrawLine(predictedLocation, closestPointInPath, Color.black);
 
-        if (Vector2.Distance(predictedLocation, closestPointInPath) > NodesPath.Instance.Radius)
+        if (Vector2.Distance(predictedLocation, closestPointInPath) > NodesPath.Instance.RadiusRun)
         {
             Seek(closestPointInPath);
         }
