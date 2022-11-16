@@ -42,6 +42,7 @@ public class UIManager : MonoBehaviour
 
     void ResetSliders()
     {
+        SliderNodeRadius?.SetValueWithoutNotify(path.GetDefaultRadius());
         SliderMaxSpeed?.SetValueWithoutNotify(carSpawner.DefaultSpeed);
         SliderMaxSteering?.SetValueWithoutNotify(carSpawner.DefaultSteer);
     }

@@ -80,4 +80,6 @@ public class NodesPath : MonoBehaviour
     {
         m_ActualRadius = m_defaultRadius;
     }
+
+    public float GetDefaultRadius() { return m_defaultRadius; }
 }

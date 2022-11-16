@@ -1006,7 +1006,7 @@ MonoBehaviour:
   btnReset: {fileID: 1242126316}
   btnResetAll: {fileID: 1043488715}
   carSpawner: {fileID: 1462281699}
-  path: {fileID: 0}
+  path: {fileID: 318303724}
 --- !u!1 &716932610
 GameObject:
   m_ObjectHideFlags: 0
